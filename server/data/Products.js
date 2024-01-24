@@ -1,6 +1,5 @@
 const products = [
     {
-      _id: "1",
       name: "Ring",
       image: "Images/ringg.jpg",
       description: "Rings",
@@ -8,7 +7,6 @@ const products = [
       countInStock: 20,
     },
     {
-      _id: "2",
       name: "Necklace",
       image: "Images/necklaceb.jpg",
       description: "Necklaces",
@@ -16,7 +14,6 @@ const products = [
       countInStock: 15,
     },
     {
-      _id: "3",
       name: "Bracelet",
       image: "Images/braceletp.jpg",
       description: "Bracelet",
@@ -24,7 +21,6 @@ const products = [
       countInStock: 18,
     },
     {
-      _id: "4",
       name: "KeyRing",
       image: "Images/keyring.jpg",
       description: "Keys Rings",
@@ -32,7 +28,6 @@ const products = [
       countInStock: 45,
     },
     {
-      _id: "5",
       name: "Phone Hanger",
       image: "Images/phone2.jpg",
       description: "Phones Hanger",

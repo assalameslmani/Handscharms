@@ -1,20 +1,26 @@
-import express from "express";
-import products from "./data/Products.js";
+import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import connectedToDatabase from './config/config.js';
+import userRoute from './routes/UserRoute.js';
+import cartRoute from './routes/CartRoute.js';
+import productRoute from './routes/ProductRoute.js';
+import orderRoute from './routes/OrderRoute.js';
 
-const app = express()
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT;
 
-app.get("/api/products",(req,res)=>{
-    res.json(products)
+app.use(cors());
+app.use(bodyParser.json());
+
+app.use('/cart', cartRoute);
+app.use('/product', productRoute);
+app.use('/order', orderRoute);
+app.use('/user', userRoute);
+
+app.listen(PORT, () => {
+    connectedToDatabase();
+    console.log(`Server is running on port: ${PORT}`);
 });
-
-app.get("/api/product/:id",(req,res)=>{
-    const product = products.find((p) => p._id === req.params.id);
-    res.json(product);
-});
-
-
-app.get("/",(req,res)=>{
-    res.send("API is Running...")
-});
-
-app.listen(5000,console.log("server running port 5000..."))

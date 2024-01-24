@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import wishlist from "../images/heart.svg";
 
+
 const Product = ({ id, name, description, price, image }) => {
   return (
     <div className="product">
